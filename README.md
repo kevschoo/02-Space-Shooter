@@ -4,6 +4,10 @@
 Exercise for MSCH-C220, 2/20/2021
 
 A 2d space shooter game. WASD to move, Left and right mouse to fire weapons. 
+There are small and large enemy drones which target you. 
+This is a survival game where you see how many waves you can last against the enemy ships.
+A healing crystal spawns every few waves and an asteroid containing one also spawns after a few waves.
+
 
 ## Implementation
 Built using Godot 3.2.3
