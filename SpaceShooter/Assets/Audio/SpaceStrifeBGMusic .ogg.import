@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/SpaceStrifeBGMusic .ogg-72071865d076ab8bf042b60a05de157b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Audio/SpaceStrifeBGMusic .ogg"
+dest_files=[ "res://.import/SpaceStrifeBGMusic .ogg-72071865d076ab8bf042b60a05de157b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

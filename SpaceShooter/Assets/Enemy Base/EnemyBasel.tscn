@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/Enemy Base/EnemyBase.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Enemy Base/EnemyBasel.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 128, 128 )
+
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 128, 0, 128, 128 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": false,
+"name": "HIgh",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": false,
+"name": "Low",
+"speed": 5.0
+} ]
+
+[node name="BaseNode" type="Area2D"]
+collision_layer = 20
+collision_mask = 2147483668
+script = ExtResource( 2 )
+
+[node name="Base" type="AnimatedSprite" parent="."]
+frames = SubResource( 4 )
+animation = "HIgh"
+
+[node name="BaseCollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 50, -32, 50, 32, 32, 50, -32, 50, -50, 32, -50, -32, -32, -50, 32, -50 )
+
+[node name="Respawner" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+[connection signal="area_entered" from="." to="." method="_on_BaseNode_area_entered"]
+[connection signal="timeout" from="Respawner" to="." method="_on_Respawner_timeout"]
